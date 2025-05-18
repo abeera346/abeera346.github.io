@@ -1,0 +1,608 @@
+ /* ================ GLOBAL STYLES ================ */
+/* Define color variables for easy theming */
+:root {
+  --primary-pink: #ffb6c1;       /* Main brand pink */
+  --secondary-pink: #f7bfc8;      /* Secondary pink */
+  --light-pink: #edbdcd;          /* Light pink for backgrounds */
+  --dark-pink: #dc678e;           /* Dark pink for accents */
+  --text-color: #555;             /* Main text color */
+  --white: #f9ecee;              /* Off-white background */
+  --transition: all 0.3s ease;    /* Default transition */
+}
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: #f8f0f3;       /* Very light pink background */
+  overflow-x: hidden;             /* Prevent horizontal scrolling */
+}
+
+/* Link styles - remove underline and inherit color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Button styles - used throughout the site */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;            /* Rounded pill shape */
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-3px);    /* Slight lift effect */
+  box-shadow: 0 5px 15px rgba(219, 112, 147, 0.3); /* Soft shadow */
+}
+
+/* Section title styling with underline */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--dark-pink);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Underline decoration for section titles */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-pink);
+}
+
+/* Container for centering content with padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================ NAVIGATION BAR ================ */
+/* header that stays at top of page */
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;                  /* Ensure navbar stays above other content */
+  padding: 15px 0;
+  transition: var(--transition);  /* Smooth transitions for any changes */
+}
+
+/* Flex container for nav items */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+}
+
+/* Navigation links list */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Individual nav items */
+.nav-links li {
+  margin-left: 30px;
+  position: relative;
+}
+
+/* Nav link styling */
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 5px 0;
+}
+
+/* Nav link hover effect */
+.nav-links a:hover {
+  color: var(--dark-pink);
+}
+
+/* Active nav link styling */
+.nav-links a.active {
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+/* Underline for active nav link */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-pink);
+}
+
+/* Shopping cart icon with badge */
+.cart-icon {
+  position: relative;
+}
+
+/* Cart item count badge */
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--dark-pink);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Mobile menu toggle */
+.hamburger {
+  display: none;                  /* Hidden by default (shown on mobile) */
+  cursor: pointer;
+}
+
+/* Hamburger menu lines */
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-pink);
+  margin: 5px;
+  transition: var(--transition);
+}
+
+/* ================ CONTACT PAGE STYLES ================ */
+/* Main contact container with grid layout */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px;                      /* Space between columns */
+}
+
+/* Contact page header */
+.contact-header {
+  text-align: center;
+  grid-column: 1 / -1;            /* Span full width */
+  margin-bottom: 40px;
+}
+
+/* Contact form styling */
+.contact-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Form input groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Form labels */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Form inputs and textareas */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--light-pink);
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Focus states for form elements */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dark-pink);
+  box-shadow: 0 0 0 3px rgba(220, 103, 142, 0.1);
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;               /* Only allow vertical resizing */
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: var(--dark-pink);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+  background-color: #c9567d;
+  transform: translateY(-2px);
+}
+
+/* Contact information section */
+.contact-info {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Individual contact info items */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+/* Icon styling for contact info */
+.info-icon {
+  background-color: var(--light-pink);
+  color: var(--dark-pink);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;                 /* Prevent icon from shrinking */
+}
+
+/* Social media links */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* Individual social media circle buttons */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--light-pink);
+  color: var(--dark-pink);
+  transition: all 0.3s ease;
+}
+
+/* Social link hover effect */
+.social-link:hover {
+  background-color: var(--dark-pink);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for contact page */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;   /* Stack columns on mobile */
+  }
+}
+
+/* ================ NEWSLETTER SECTION ================ */
+.newsletter {
+  padding: 60px 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  color: var(--dark-pink);
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid var(--primary-pink);
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 15px 30px;
+  border-radius: 0 25px 25px 0;
+  border: none;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+  background-color: var(--dark-pink);
+}
+
+
+/* ================ FOOTER ================ */
+.footer {
+  background-color: var(--white);
+  padding: 60px 0 0;
+  box-shadow: 0 -5px 15px rgba(255, 182, 193, 0.1);
+}
+
+/* Footer grid layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer logo area */
+.footer-logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dark-pink);
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Footer links section */
+.footer-links h3, .footer-social h3 {
+  font-size: 1.3rem;
+  color: var(--dark-pink);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Underline for footer headings */
+.footer-links h3::after, .footer-social h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-pink);
+}
+
+/* Footer link list */
+.footer-links ul {
+  list-style: none;
+}
+
+/* Footer link items */
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+/* Footer link hover effect */
+.footer-links a:hover {
+  color: var(--dark-pink);
+  padding-left: 5px;              /* Indent on hover */
+}
+
+/* Social media icons in footer */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Individual social icon */
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+/* Social icon hover effect */
+.social-icons a:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-5px);
+}
+
+/* Footer copyright section */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+  font-size: 0.9rem;
+}
+
+/* ================ SHOPPING CART MODAL ================ */
+/* Off-canvas cart panel */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 2000;                  /* Above other content */
+  overflow-y: auto;               /* Scrollable if many items */
+  transform: translateX(100%);    /* Start off-screen */
+  transition: transform 0.3s ease;
+}
+
+/* Active cart modal */
+.cart-modal.active {
+  display: block;
+  transform: translateX(0);       /* Slide in from right */
+}
+
+/* Cart content area */
+.cart-content {
+  padding: 20px;
+  position: relative;
+  height: 100%;
+}
+
+/* Close button for cart */
+.close-cart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
+/* Cart items list */
+.cart-items {
+  margin-bottom: 20px;
+  max-height: 60vh;               /* Limit height with scroll */
+  overflow-y: auto;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Cart item image */
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+/* Cart total section at bottom */
+.cart-total {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Checkout button */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Checkout button hover */
+.checkout-btn:hover {
+  background-color: var(--dark-pink);
+}
+
+/* ================ RESPONSIVE ADJUSTMENTS ================ */
+@media (max-width: 768px) {
+  /* Mobile menu styles */
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+    transition: var(--transition);
+  }
+  
+  /* Mobile menu when active */
+  .nav-links.active {
+    left: 0;
+  }
+  
+  /* Mobile menu items */
+  .nav-links li {
+    margin: 15px 0;
+  }
+}

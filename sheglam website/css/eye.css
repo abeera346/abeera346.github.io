@@ -1,0 +1,1274 @@
+/* ======================== */
+/* CORE STYLE FOUNDATION */
+/* ======================== */
+
+/* 
+  Color palette definitions 
+  - Primary brand colors for consistent theming
+  - Shades for text, backgrounds and accents
+*/
+:root {
+    --primary: #ff6b8b;       /* Vibrant pink for primary actions */
+    --secondary: #ffb6c1;     /* Softer pink for secondary elements */
+    --dark: #333;             /* Primary text color */
+    --light: #fff9fa;         /* Light background tint */
+    --gray: #666;             /* Secondary text color */
+    --primary-pink: #ffb6c1;  /* Alternative pink shade */
+    --secondary-pink: #f7bfc8;/* Muted pink variant */
+    --light-pink: #edbdcd;    /* Very light pink for subtle accents */
+    --dark-pink: #dc678e;     /* Deep pink for important elements */
+    --text-color: #555;       /* Default body text color */
+    --white: #f9ecee;         /* Off-white with pink undertone */
+    --transition: all 0.3s ease; /* Standard animation timing */
+}
+
+/* 
+  Global reset and base styles 
+  - Ensures consistent starting point across browsers
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* More predictable sizing */
+    font-family: 'Avenir', 'Helvetica', sans-serif; /* Clean, modern font stack */
+}
+
+/* 
+  Document body defaults 
+  - Sets up the canvas for all content
+*/
+body {
+    background-color: #fff;    /* Pure white background */
+    color: var(--dark);       /* Dark gray for optimal readability */
+}
+
+/* 
+  Link styling reset 
+  - Removes default underline while maintaining accessibility
+*/
+a {
+  text-decoration: none;
+  color: inherit; /* Inherits parent text color */
+}
+
+/* ======================== */
+/* REUSABLE COMPONENTS */
+/* ======================== */
+
+/* 
+  Button styling - primary call-to-action 
+  - Used throughout site for important actions
+*/
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;   /* High contrast default */
+  color: var(--white);
+  border: none;
+  border-radius: 25px;      /* Fully rounded pill shape */
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+  text-transform: uppercase; /* Premium feel */
+  letter-spacing: 1px;       /* Improves readability */
+  font-size: 14px;
+}
+
+/* Button hover state - interactive feedback */
+.btn:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-3px);    /* Subtle lift effect */
+  box-shadow: 0 5px 15px rgba(219, 112, 147, 0.3); /* Soft glow */
+}
+
+/* 
+  Content container 
+  - Constrains content width while maintaining responsive margins
+*/
+.container {
+    max-width: 1200px;       /* Optimal reading width */
+    margin: 0 auto;          /* Horizontal centering */
+    padding: 0 20px;         /* Mobile-friendly gutters */
+}
+
+/* 
+  Section headings 
+  - Standardized treatment for content section titles
+*/
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;       /* Large, impactful text */
+    margin: 40px 0;          /* Generous vertical spacing */
+    position: relative;
+    color: var(--dark);
+}
+
+/* Decorative underline for section titles */
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;             /* Underline width */
+    height: 4px;             /* Underline thickness */
+    background: linear-gradient(90deg, var(--primary), var(--secondary)); /* Gradient effect */
+    margin: 15px auto;       /* Centered positioning */
+    border-radius: 2px;      /* Softened edges */
+}
+
+/* ======================== */
+/* MAIN NAVIGATION */
+/* ======================== */
+
+/* 
+  Navigation bar 
+  - Fixed position stays visible during scroll
+  - Light background with subtle shadow
+*/
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2); /* Soft pink shadow */
+  position: fixed;           /* Sticky header behavior */
+  width: 100%;
+  top: 0;
+  z-index: 1000;             /* Ensures nav stays above other content */
+  padding: 15px 0;
+  transition: var(--transition); /* Smooth state changes */
+}
+
+/* 
+  Navigation container 
+  - Flex layout for horizontal alignment
+*/
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Logo left, nav right */
+  align-items: center;
+  max-width: 1200px;         /* Matches content width */
+  margin: 0 auto;
+  padding: 0 20px;           /* Side padding */
+}
+
+/* 
+  Brand logo styling 
+  - Strong visual identity element
+*/
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;              /* High contrast */
+  letter-spacing: 1px;       /* Upscale typography */
+}
+
+/* 
+  Navigation links list 
+  - Horizontal menu items
+*/
+.nav-links {
+  display: flex;
+  list-style: none;          /* Removes bullet points */
+}
+
+/* Individual navigation items */
+.nav-links li {
+  margin-left: 30px;         /* Space between items */
+  position: relative;        /* For hover effects */
+}
+
+/* Navigation link styling */
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 5px 0;            /* Clickable area */
+}
+
+/* Hover state for nav links */
+.nav-links a:hover {
+  color: var(--dark-pink);   /* Brand color on interaction */
+}
+
+/* Active page indicator */
+.nav-links a.active {
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+/* Underline effect for current page */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-pink); /* Accent underline */
+}
+
+/* 
+  Shopping cart icon 
+  - With badge for item count
+*/
+.cart-icon {
+  position: relative;        /* For badge positioning */
+}
+
+/* Cart item counter badge */
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--dark-pink); /* Stands out */
+  color: white;
+  border-radius: 50%;        /* Circular shape */
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* 
+  Mobile menu toggle 
+  - Hidden on desktop, shown on mobile
+*/
+.hamburger {
+  display: none;             /* Hidden by default */
+  cursor: pointer;
+}
+
+/* Hamburger menu lines */
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-pink);
+  margin: 5px;
+  transition: var(--transition);
+}
+
+/* ======================== */
+/* HERO SECTION */
+/* ======================== */
+
+/* 
+  Full-viewport hero banner 
+  - First visual impression of site
+*/
+.eye-hero {
+    height: 100vh;           /* Full viewport height */
+    min-height: 500px;       /* Minimum height */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), /* Dark overlay */
+                url('https://hips.hearstapps.com/hmg-prod/images/sheglam-lede-65a1ac3ea9c5f.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;     /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero content container */
+.hero-content {
+    z-index: 2;             /* Above background */
+    animation: fadeInUp 1s ease; /* Entrance animation */
+}
+
+/* Hero heading - main message */
+.eye-hero h1 {
+    font-size: 4rem;        /* Very large text */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Improves contrast */
+}
+
+/* Hero subheading */
+.eye-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Readability on image */
+}
+
+/* Hero call-to-action button */
+.btn-hero {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Hero button hover state */
+.btn-hero:hover {
+    background-color: transparent;
+    border-color: white;    /* Outline effect */
+    transform: translateY(-3px); /* Interactive feedback */
+}
+
+/* ======================== */
+/* PRODUCT GRID SYSTEM */
+/* ======================== */
+
+/* 
+  Product listing container 
+  - Grid layout for responsive product display
+*/
+.all-products {
+  padding: 40px 0;          /* Section spacing */
+  background-color: #fff;   /* Clean white background */
+}
+
+/* Product grid container */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 25px;                /* Consistent spacing */
+}
+
+/* 
+  Individual product cards 
+  - Self-contained product displays
+*/
+.product-card {
+  background: #fff;
+  border-radius: 8px;       /* Soft rounded corners */
+  overflow: hidden;         /* Contains child elements */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Interactive feel */
+}
+
+/* Product card hover state */
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1); /* Enhanced shadow */
+}
+
+/* Product image container */
+.product-img {
+  position: relative;
+  height: 250px;            /* Fixed height for consistency */
+  overflow: hidden;         /* Contains image */
+}
+
+/* Product image styling */
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Ensures proper cropping */
+  transition: transform 0.5s ease; /* Smooth zoom effect */
+}
+
+/* Image zoom on card hover */
+.product-card:hover .product-img img {
+  transform: scale(1.03);  /* Subtle zoom effect */
+}
+
+/* 
+  Color shade selector 
+  - For products with multiple color options
+*/
+.shade-options {
+  position: absolute;
+  bottom: 15px;            /* Positioned above bottom */
+  left: 15px;
+  display: flex;
+  gap: 6px;                /* Space between color dots */
+}
+
+/* Individual color shade indicator */
+.shade {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;      /* Circular shape */
+  border: 1px solid rgba(0,0,0,0.1); /* Subtle border */
+  cursor: pointer;         /* Indicates interactivity */
+  transition: transform 0.2s; /* Interactive feedback */
+}
+
+/* Shade selector hover state */
+.shade:hover {
+  transform: scale(1.2);   /* Slight enlargement */
+}
+
+/* 
+  Product status badges 
+  - Highlights special product attributes
+*/
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 10px;
+  border-radius: 12px;     /* Pill shape */
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase; /* Consistent with buttons */
+  color: white;
+}
+
+/* Specific badge color variations */
+.bestseller {
+  background-color: #ff6b6b; /* Attention-grabbing red */
+}
+
+.new {
+  background-color: #51cf66; /* Fresh green */
+}
+
+.sale {
+  background-color: #fcc419; /* Sale yellow */
+}
+
+.free-shipping {
+  top: 45px;               /* Stacked badge position */
+  background-color: #339af0; /* Trust-building blue */
+}
+
+/* ======================== */
+/* PRODUCT INFORMATION */
+/* ======================== */
+
+/* Product details container */
+.product-info {
+  padding: 18px;           /* Internal spacing */
+}
+
+/* Product title styling */
+.product-info h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Star rating display */
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Star icons */
+.stars {
+  color: #ffd43b;          /* Gold star color */
+  font-size: 14px;
+  letter-spacing: 1px;     /* Space between stars */
+}
+
+/* Review count text */
+.review-count {
+  font-size: 12px;
+  color: #868e96;          /* Subdued text */
+  margin-left: 5px;
+}
+
+/* Product price styling */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin: 10px 0 15px;
+}
+
+/* Original price (for sale items) */
+.original-price {
+  font-size: 14px;
+  color: #868e96;
+  text-decoration: line-through; /* Strike-through effect */
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+/* Add to cart button */
+.add-to-cart {
+  width: 100%;             /* Full width */
+  padding: 10px;
+  background-color: #000;  /* High contrast */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth color change */
+}
+
+/* Add to cart hover state */
+.add-to-cart:hover {
+  background-color: #333;  /* Slightly lighter black */
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ======================== */
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Narrower columns */
+    gap: 20px;              /* Reduced spacing */
+  }
+  
+  .product-img {
+    height: 200px;          /* Smaller images */
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+    gap: 15px;              /* Tight spacing */
+  }
+  
+  .product-info {
+    padding: 12px;          /* Compact padding */
+  }
+  
+  .product-info h3 {
+    font-size: 14px;        /* Smaller text */
+  }
+  
+  .price {
+    font-size: 16px;        /* Adjusted size */
+  }
+}
+
+/* ======================== */
+/* INTERACTIVE ELEMENTS */
+/* ======================== */
+
+/* 
+  Cart counter animation 
+  - Visual feedback when adding items
+*/
+.cart-count.pulse {
+  animation: pulse 0.5s ease; /* Attention-grabbing effect */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); } /* Grow slightly */
+  100% { transform: scale(1); }
+}
+
+/* 
+  Cart update notification 
+  - Temporary feedback message
+*/
+.cart-feedback {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Horizontal centering */
+  background-color: #db7093;   /* Pink background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 1000;               /* Above other content */
+  animation: fadeInOut 2s ease-in-out; /* Automatic disappearance */
+}
+
+/* Notification animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+/* ======================== */
+/* TUTORIAL SECTION */
+/* ======================== */
+
+/* 
+  Product tutorial section 
+  - Video + step-by-step instructions
+*/
+.tutorial-section {
+    padding: 60px 0;
+    background-color: rgb(249, 229, 208); /* Warm neutral background */
+}
+
+/* Tutorial content container */
+.tutorial-video {
+    display: flex;
+    flex-wrap: wrap;        /* Allows wrapping on small screens */
+    gap: 150px;             /* Large gap between video and steps */
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Video embed container */
+.video-wrapper {
+    flex: 1;
+    min-width: 600px;       /* Minimum width before wrapping */
+    border-radius: 12px;    /* Softened corners */
+    overflow: hidden;       /* Contains video */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Depth effect */
+}
+
+/* Responsive video embed */
+.video-wrapper iframe {
+    width: 100%;
+    height: 400px;          /* Fixed height */
+    border: none;           /* Removes default border */
+}
+
+/* Step-by-step instructions */
+.tutorial-steps {
+    flex: 1;
+    min-width: 300px;       /* Minimum width before wrapping */
+}
+
+/* Numbered steps list */
+.steps-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Individual step items */
+.steps-list li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    position: relative;
+    list-style-type: none;  /* Removes default bullets */
+    padding-left: 35px;     /* Space for custom numbers */
+}
+
+/* Custom numbered bullets */
+.steps-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: var(--primary); /* Brand color */
+    border-radius: 50%;     /* Circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Individual step numbers */
+.steps-list li:nth-child(1):before { content: '1'; }
+.steps-list li:nth-child(2):before { content: '2'; }
+.steps-list li:nth-child(3):before { content: '3'; }
+.steps-list li:nth-child(4):before { content: '4'; }
+.steps-list li:nth-child(5):before { content: '5'; }
+
+/* ======================== */
+/* TREND SPOTLIGHT */
+/* ======================== */
+
+/* 
+  Featured trend showcase 
+  - Highlights current popular products
+*/
+.trend-spotlight {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff9fa 0%, #ffffff 100%); /* Subtle gradient */
+}
+
+/* Trend content container */
+.trend-container {
+    display: flex;
+    flex-wrap: wrap;        /* Allows responsive wrapping */
+    align-items: center;
+    gap: 40px;              /* Space between content and image */
+    margin-top: 40px;
+    background: rgb(235, 163, 163); /* Warm pink background */
+    border-radius: 12px;    /* Rounded corners */
+    overflow: hidden;       /* Contains child elements */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft shadow */
+}
+
+/* Text content area */
+.trend-content {
+    flex: 1;
+    min-width: 100px;       /* Minimum width */
+    padding: 40px;          /* Generous padding */
+}
+
+/* Featured image area */
+.trend-image {
+    flex: 1;
+    min-width: 100px;       /* Minimum width */
+}
+
+/* Featured product image */
+.trend-image img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;      /* Proper image cropping */
+}
+
+/* Trend CTA button */
+.btn-trend {
+    padding: 12px 30px;
+    background-color: var(--primary); /* Brand color */
+    color: white;
+    border: none;
+    border-radius: 30px;    /* Rounded shape */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Button hover state */
+.btn-trend:hover {
+    background-color: var(--dark); /* Darker on hover */
+    transform: translateY(-3px);  /* Lift effect */
+}
+
+/* ======================== */
+/* ANIMATIONS */
+/* ======================== */
+
+/* 
+  Fade-in up animation 
+  - For element entrance effects
+*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Moves to normal position */
+    }
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ======================== */
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+    .eye-hero h1 {
+        font-size: 2.5rem;  /* Smaller heading */
+    }
+    
+    .eye-hero p {
+        font-size: 1.2rem;  /* Smaller subheading */
+    }
+    
+    .section-title {
+        font-size: 2rem;    /* Reduced section title */
+    }
+    
+    .video-wrapper iframe {
+        height: 300px;      /* Shorter video */
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+    .eye-hero {
+        height: 60vh;       /* Reduced height */
+        min-height: 400px;
+    }
+    
+    .eye-hero h1 {
+        font-size: 2rem;    /* Compact heading */
+    }
+    
+    .section-title {
+        font-size: 1.8rem;  /* Smaller title */
+    }
+    
+    .trend-content, .tutorial-steps {
+        padding: 20px;      /* Compact padding */
+    }
+}
+
+/* ======================== */
+/* NEWSLETTER SECTION */
+/* ======================== */
+
+/* 
+  Email signup form 
+  - For customer retention
+*/
+.newsletter {
+  padding: 60px 0;
+  background-color: var(--white); /* Clean background */
+  text-align: center;
+}
+
+/* Newsletter container */
+.newsletter-container {
+  max-width: 600px;         /* Optimal reading width */
+  margin: 0 auto;           /* Centered */
+}
+
+/* Newsletter heading */
+.newsletter h2 {
+  font-size: 2rem;
+  color: var(--dark-pink);  /* Brand color */
+  margin-bottom: 15px;
+}
+
+/* Newsletter description */
+.newsletter p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Form layout */
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Email input field */
+.newsletter-form input {
+  flex: 1;                  /* Takes available space */
+  padding: 15px;
+  border: 2px solid var(--primary-pink); /* Brand-colored border */
+  border-radius: 25px 0 0 25px; /* Left rounded only */
+  outline: none;            /* Removes default focus */
+  font-size: 1rem;
+}
+
+/* Submit button */
+.newsletter-form button {
+  padding: 15px 30px;
+  border-radius: 0 25px 25px 0; /* Right rounded only */
+  border: none;
+  background-color: var(--primary-pink); /* Matches input border */
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Button hover state */
+.newsletter-form button:hover {
+  background-color: var(--dark-pink); /* Darker on hover */
+}
+
+/* ======================== */
+/* FOOTER */
+/* ======================== */
+
+/* 
+  Site footer 
+  - Contains links, info, and copyright
+*/
+.footer {
+  background-color: var(--white);
+  padding: 60px 0 0;        /* Top padding only */
+  box-shadow: 0 -5px 15px rgba(255, 182, 193, 0.1); /* Soft top shadow */
+}
+
+/* Footer content grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 40px;                /* Space between columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Branding in footer */
+.footer-logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dark-pink);  /* Brand color */
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Footer description text */
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.6;         /* Improved readability */
+}
+
+/* Footer section headings */
+.footer-links h3, .footer-social h3 {
+  font-size: 1.3rem;
+  color: var(--dark-pink);  /* Brand color */
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;     /* Space for underline */
+}
+
+/* Section heading underline */
+.footer-links h3::after, .footer-social h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-pink); /* Accent line */
+}
+
+/* Footer links list */
+.footer-links ul {
+  list-style: none;         /* Removes bullets */
+}
+
+/* Individual footer links */
+.footer-links li {
+  margin-bottom: 10px;      /* Vertical spacing */
+}
+
+/* Link hover effect */
+.footer-links a:hover {
+  color: var(--dark-pink);  /* Brand color */
+  padding-left: 5px;        /* Indent effect */
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 15px;                /* Space between icons */
+}
+
+/* Individual social icon */
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-pink); /* Brand color */
+  color: var(--white);
+  border-radius: 50%;       /* Circular shape */
+  transition: var(--transition);
+}
+
+/* Social icon hover */
+.social-icons a:hover {
+  background-color: var(--dark-pink); /* Darker on hover */
+  transform: translateY(-5px);        /* Lift effect */
+}
+
+/* Copyright section */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3); /* Subtle divider */
+  font-size: 0.9rem;
+}
+
+/* ======================== */
+/* SHOPPING CART MODAL */
+/* ======================== */
+
+/* 
+  Slide-out cart panel 
+  - Displays cart contents
+*/
+.cart-modal {
+  display: none;            /* Hidden by default */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;             /* Fixed width */
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Left shadow */
+  z-index: 2000;            /* Above other content */
+  overflow-y: auto;         /* Scrollable if needed */
+  transform: translateX(100%); /* Off-screen by default */
+  transition: transform 0.3s ease; /* Smooth slide */
+}
+
+/* Active cart state */
+.cart-modal.active {
+  display: block;
+  transform: translateX(0); /* Slides in */
+}
+
+/* Cart content container */
+.cart-content {
+  padding: 20px;
+  position: relative;
+  height: 100%;
+}
+
+/* Close button */
+.close-cart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-pink);  /* Brand color */
+}
+
+/* Cart heading */
+.cart-content h2 {
+  color: var(--dark-pink);  /* Brand color */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3); /* Subtle divider */
+}
+
+/* Cart items container */
+.cart-items {
+  margin-bottom: 20px;
+  max-height: 60vh;         /* Limits height */
+  overflow-y: auto;         /* Scrollable */
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3); /* Item divider */
+}
+
+/* Product image in cart */
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;        /* Proper image display */
+  border-radius: 5px;       /* Softened corners */
+  margin-right: 15px;
+}
+
+/* Cart item details */
+.cart-item-details {
+  flex: 1;                  /* Takes remaining space */
+}
+
+/* Product title in cart */
+.cart-item-title {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--dark-pink);  /* Brand color */
+}
+
+/* Price display */
+.cart-item-price {
+  font-size: 0.9rem;
+  color: var(--dark-pink);
+  margin-bottom: 5px;
+}
+
+/* Remove item link */
+.cart-item-remove {
+  color: var(--dark-pink);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Cart summary section */
+.cart-total {
+  position: absolute;
+  bottom: 20px;             /* Fixed at bottom */
+  left: 20px;
+  right: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3); /* Divider */
+}
+
+/* Total price display */
+.cart-total p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between; /* Label + price */
+}
+
+/* Price amount emphasis */
+.total-price {
+  color: var(--dark-pink);  /* Brand color */
+}
+
+/* Checkout button */
+.checkout-btn {
+  width: 100%;              /* Full width */
+  padding: 12px;
+  background-color: var(--primary-pink); /* Brand color */
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Checkout button hover */
+.checkout-btn:hover {
+  background-color: var(--dark-pink); /* Darker on hover */
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ======================== */
+
+/* Large tablet breakpoint */
+@media (max-width: 992px) {
+  .hero-slider {
+      height: 60vh;         /* Reduced height */
+  }
+  
+  .slide-content h2 {
+      font-size: 2rem;      /* Smaller heading */
+  }
+  
+  .slide-content p {
+      font-size: 1rem;      /* Smaller text */
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  /* Mobile navigation */
+  .nav-links {
+      position: fixed;
+      top: 70px;
+      left: -100%;          /* Off-screen */
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-color: var(--white);
+      flex-direction: column; /* Vertical layout */
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 30px;
+      transition: var(--transition);
+  }
+  
+  /* Active mobile nav */
+  .nav-links.active {
+      left: 0;              /* Slides in */
+  }
+  
+  /* Mobile nav items */
+  .nav-links li {
+      margin: 15px 0;       /* Vertical spacing */
+  }
+  
+  /* Show hamburger menu */
+  .hamburger {
+      display: block;
+  }
+  
+  /* Hamburger animation - first line */
+  .hamburger.active .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px); /* X shape */
+  }
+  
+  /* Hamburger animation - middle line */
+  .hamburger.active .line:nth-child(2) {
+      opacity: 0;           /* Disappears */
+  }
+  
+  /* Hamburger animation - bottom line */
+  .hamburger.active .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px); /* X shape */
+  }
+  
+  .hero-slider {
+      height: 50vh;         /* Compact height */
+  }
+  
+  .slide-content {
+      padding: 20px;        /* Reduced padding */
+  }
+  
+  .slide-content h2 {
+      font-size: 1.5rem;    /* Smaller heading */
+  }
+  
+  .products-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 576px) {
+  .hero-slider {
+      height: 40vh;         /* Very compact */
+  }
+  
+  .slider-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;      /* Smaller arrows */
+  }
+  
+  /* Stacked newsletter form */
+  .newsletter-form {
+      flex-direction: column;
+  }
+  
+  .newsletter-form input {
+      border-radius: 25px;  /* Full rounding */
+      margin-bottom: 10px;  /* Space between */
+  }
+  
+  .newsletter-form button {
+      border-radius: 25px;  /* Full rounding */
+  }
+  
+  .cart-modal {
+      width: 100%;          /* Full-width on mobile */
+  }
+}
+
+/* ======================== */
+/* ANIMATION UTILITIES */
+/* ======================== */
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Slide-up effect */
+@keyframes slideUp {
+  from { 
+      opacity: 0;
+      transform: translateY(50px); /* Starts below */
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);    /* Slides up */
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
