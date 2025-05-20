@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | SheGlam - Premium Beauty Collection</title>
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/All-products.css">
+    <!-- Font for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 
+        ======================
+        MAIN NAVIGATION BAR
+        ======================
+    -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo">SHEGLAM</a>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all-products.html" class="active">All Products</a></li>
+                <li><a href="face.html">Face</a></li>
+                <li><a href="eye.html">Eye</a></li>
+                <li><a href="lip.html">Lip</a></li>
+                <li><a href="join-us.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Shopping Cart with Counter -->
+                <li><a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+        ======================
+        HERO BANNER SECTION
+        ======================
+    -->
+    <section class="products-hero">
+        <div class="hero-content">
+            <h1>Discover Your Perfect Look</h1>
+            <p>Explore our complete collection of premium beauty products</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+ 
+    <!-- 
+        ======================
+        MAIN PRODUCTS GRID
+        ======================
+    -->
+    <section class="all-products" id="products">
+        <div class="container">
+            <h2 class="section-title">All Products</h2>
+            
+            <div class="products-grid compact-grid">
+                <!-- Product Card 1 - Lip Gloss -->
+                <div class="product-card" data-id="product1" data-category="lip" data-price="16.99">
+                    <div class="product-img">
+                        <img src="Assets/images/feel22packshot-2025-01-14T155543.159.webp" alt="Liquid Concealer">
+                        <!-- Color shade selection options -->
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #fff0f5;" title="Pink Pearl"></span>
+                            <span class="shade" style="background-color: #bf9c6c;" title="Bubblegum"></span>
+                            <span class="shade" style="background-color: #9a764c;" title="Berry Blast"></span>
+                        </div>
+                        <span class="product-badge bestseller">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Liquid sheer coverage concealer</h3>
+                        <!-- Product rating -->
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(128 reviews)</span>
+                        </div>
+                        <p class="product-desc">High-shine, non-sticky formula </p>
+                        <p class="price">$16.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 - highlighter -->
+                <div class="product-card" data-category="lip" data-price="16.99">
+                    <div class="product-img">
+                        <img src="Assets/images/51oWoK7bUqL.jpg" alt="Powder Highlighter">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #fff0f5;" title="Pink Pearl"></span>
+                            <span class="shade" style="background-color: #fff3c0;" title="Bubblegum"></span>
+                            <span class="shade" style="background-color: #eac97d;" title="Berry Blast"></span>
+                        </div>
+                        <span class="product-badge bestseller">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Prism Powder Highlighter</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(94 reviews)</span>
+                        </div>
+                        <p class="product-desc">Velvet-matte finish with all-day comfort</p>
+                        <p class="price">$16.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 - blush -->
+                <div class="product-card" data-category="eye" data-price="19.99">
+                    <div class="product-img">
+                        <img src="Assets/images/41RyKGO2CpL.jpg" alt="Cream Blush">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #ffcce6;" title="Blush Pink"></span>
+                            <span class="shade" style="background-color: #e8a6a9;" title="Cotton Candy"></span>
+                            <span class="shade" style="background-color: #f78193;" title="Berry Sorbet"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dewy Cream Blush</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(215 reviews)</span>
+                        </div>
+                        <p class="product-desc">Highly pigmented, blendable formula</p>
+                        <p class="price">$19.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 - glitter -->
+                <div class="product-card" data-category="face" data-price="29.99">
+                    <div class="product-img">
+                        <img src="Assets/images/glitter.jpg" alt="Perfect Glow glitter">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #f8c8dc;" title="Porcelain"></span>
+                            <span class="shade" style="background-color: #f4c9a6;" title="Ivory"></span>
+                            <span class="shade" style="background-color: #d6bd62;" title="Natural"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Perfect Glow glitter</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(187 reviews)</span>
+                        </div>
+                        <p class="product-desc">Lightweight, buildable eye sparkly glitter</p>
+                        <p class="price">$19.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 5 - primer -->
+                <div class="product-card" data-category="primer" data-price="14.99">
+                    <div class="product-img">
+                        <img src="Assets/images/primer.jpg" alt="primer">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #ffb7d5;" title="Peony"></span>
+                            <span class="shade" style="background-color: #ff8fab;" title="Rosewood"></span>
+                            <span class="shade" style="background-color: #ff7096;" title="Fuchsia"></span>
+                        </div>
+                        <span class="product-badge sale">Sale</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Primer</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(342 reviews)</span>
+                        </div>
+                        <p class="product-desc">Highly covering pore concealing primer</p>
+                        <p class="price">$14.99 <span class="original-price">$19.99</span></p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 6 - BROW GEL -->
+                <div class="product-card" data-category="eye" data-price="12.99">
+                    <div class="product-img">
+                        <img src="Assets/images/gel.jpg" alt="brow gel">
+                    </div>
+                    <div class="product-info">
+                        <h3>Brow gel</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(276 reviews)</span>
+                        </div>
+                        <p class="product-desc">24 hours hold natual look eyebrow gel</p>
+                        <p class="price">$12.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product Card 7 - Highlighter -->
+                <div class="product-card" data-category="face" data-price="27.99">
+                    <div class="product-img">
+                        <img src="Assets/images/B8DF0370-EA5F-46F0-9C92-C133E718E78F.webp" alt="Cream Highlighter">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #ffecf1;" title="Pearl"></span>
+                            <span class="shade" style="background-color: #ffd6e7;" title="Rose Gold"></span>
+                            <span class="shade" style="background-color: #ffc0dd;" title="Pink Diamond"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Radiant Glow Highlighter</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(198 reviews)</span>
+                        </div>
+                        <p class="product-desc">Buildable glow for a natural-looking radiance</p>
+                        <p class="price">$27.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                               <!-- Product Card 7 - Highlighter -->
+                <div class="product-card" data-category="face" data-price="8.99">
+                    <div class="product-img">
+                        <img src="Assets/images/brow-pencil.jpg" alt="brow pencil">
+                        <div class="shade-options">
+                            <span class="shade" style="background-color: #433316;" title="Pearl"></span>
+                            <span class="shade" style="background-color: #191306;" title="Rose Gold"></span>
+                            <span class="shade" style="background-color: #0f0e09;" title="Pink Diamond"></span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Precise brow pencil</h3>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(198 reviews)</span>
+                        </div>
+                        <p class="product-desc">Buildable for natural looking brows</p>
+                        <p class="price">$8.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        ======================
+        FEATURED PRODUCT SHOWCASE #1
+        (With Video Background)
+        ======================
+    -->
+     <section class="video-product-showcase showcase-2">
+        <div class="video-container"data-category="lip"></div>
+            <video autoplay muted loop playsinline>
+                <source src="Assets/videos/video10.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="featured-product">
+            <div class="product-image">
+                <img src="Assets/images/IMG_6876.PNG" alt="Featured Velvet Matte Lipstick">
+                <span class="product-badge new">new</span>
+            </div>
+            <div class="product-details">
+                <h3>Velvet Matte Lipstick</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>4.9 (412 reviews)</span>
+                </div>
+                <p class="description">Creamy matte finish with all-day hydration and vibrant color payoff.</p>
+                <div class="price">$19.99 <span class="original-price">$24.99</span></div>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="#" class="view-details">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        ======================
+        BEAUTY TIPS CAROUSEL
+        ======================
+    -->
+    <section class="beauty-tips">
+        <h2 class="section-title">Pro Beauty Tips</h2>
+        <div class="tips-carousel">
+            <!-- Tip Card 1 - Blush Application -->
+            <div class="tip-card">
+                <div class="tip-image-wrapper">
+                    <img src="Assets/images/IMG_7014.PNG" alt="Blending Technique">
+                </div>
+                <div class="tip-content">
+                    <h3>Perfect Blush Application</h3>
+                    <p>Learn how to apply blush for a natural, lifted look</p>
+                    <a href="https://www.sheglam.com/activity/how-to-apply-cream-blush-313" class="btn-tip">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip Card 2 - Lip Liner -->
+            <div class="tip-card">
+                <div class="tip-image-wrapper">
+                    <img src="Assets/images/IMG_6998.PNG" alt="Lip Liner Technique">
+                </div>
+                <div class="tip-content">
+                    <h3>Lip Liner Tricks</h3>
+                    <p>Get perfectly defined lips with these pro techniques</p>
+                    <a href="https://m.sheglam.com/ja/activity/baddie-lips-324" class="btn-tip">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Tip Card 3 - Smokey Eye -->
+            <div class="tip-card">
+                <div class="tip-image-wrapper">
+                    <img src="Assets/images/IMG_6997.JPG" alt="Eye Makeup">
+                </div>
+                <div class="tip-content">
+                    <h3>Smokey Eye Simplified</h3>
+                    <p>Create the perfect smokey eye in just 5 minutes</p>
+                    <a href="https://m.sheglam.com/es/activity/smokey-eye-makeup-258" class="btn-tip">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        ======================
+        FEATURED PRODUCT SHOWCASE #2
+        (With Video Background)
+        ======================
+    -->
+    <section class="video-product-showcase showcase-3">
+        <div class="video-container" data-category="eye">
+            <video autoplay muted loop playsinline>
+                <source src="Assets/videos/video11.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="featured-product">
+            <div class="product-image">
+                <img src="Assets/images/IMG_7031.PNG" alt="Featured Pink Horizon Palette">
+                <span class="product-badge limited">Limited</span>
+            </div>
+            <div class="product-details">
+                <h3>Pink Horizon Palette</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>5.0 (276 reviews)</span>
+                </div>
+                <p class="description">12 versatile shades for day-to-night looks with buttery-soft texture.</p>
+                <div class="price">$34.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+                <a href="#" class="view-details">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        ======================
+        INSTAGRAM FEED SECTION
+        ======================
+    -->
+    <section class="instagram-feed">
+        <h2 class="section-title">Follow Us @SheGlam_official</h2>
+        <div class="instagram-posts">
+            <!-- Instagram Post 1 -->
+            <div class="post">
+                <video autoplay muted loop playsinline>
+                    <source src="Assets/videos/video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="post-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            
+            <!-- Instagram Post 2 -->
+            <div class="post">
+                <video autoplay muted loop playsinline>
+                    <source src="Assets/videos/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="post-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            
+            <!-- Instagram Post 3 -->
+            <div class="post">
+                <video autoplay muted loop playsinline>
+                    <source src="Assets/videos/video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="post-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            
+            <!-- Instagram Post 4 -->
+            <div class="post">
+                <video autoplay muted loop playsinline>
+                    <source src="Assets/videos/video5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="post-overlay">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Follow Button -->
+        <a href="https://instagram.com/SheGlam_official" target="_blank" class="btn instagram-btn">
+            <i class="fab fa-instagram"></i> Follow on Instagram
+        </a>
+    </section>
+
+    <!-- 
+        ======================
+        NEWSLETTER SIGNUP
+        ======================
+    -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Join Our Beauty Community</h2>
+            <p>Subscribe to get exclusive offers and beauty tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 
+        ======================
+        FOOTER
+        ======================
+    -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Information -->
+            <div class="footer-logo">
+                <a href="index.html">SheGlam</a>
+                <p>Beauty Redefined with Soft Pink Elegance</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="all-products.html">Products</a></li>
+                    <li><a href="join-us.html">Join Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Information -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 SheGlam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 
+        ======================
+        SHOPPING CART MODAL
+        ======================
+    -->
+    <div class="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically inserted here via JavaScript -->
+            </div>
+            <div class="cart-total">
+                <p>Total: <span class="total-price">$0.00</span></p>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
