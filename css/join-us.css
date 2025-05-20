@@ -1,0 +1,821 @@
+/* ======================
+   GLOBAL STYLES & VARIABLES
+   ====================== */
+
+/* Define our main color palette for consistent theming */
+:root {
+  --primary-pink: #ffb6c1;       /* Soft pink - our main brand color */
+  --secondary-pink: #f7bfc8;     /* Lighter pink for accents */
+  --light-pink: #edbdcd;         /* Very light pink for backgrounds */
+  --dark-pink: #dc678e;          /* Deep pink for text and buttons */
+  --text-color: #555;            /* Default text color */
+  --white: #f9ecee;              /* Off-white background color */
+  --transition: all 0.3s ease;   /* Standard transition timing */
+}
+
+/* Reset default browser styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes padding not affect element width */
+}
+
+/* Base body styles for the whole site */
+body {
+  font-family: 'Arial', sans-serif; /* Clean, readable default font */
+  color: var(--text-color);
+  background-color: #f8f0f3; /* Very light pink background */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Link styling - remove underline by default */
+a {
+  text-decoration: none;
+  color: inherit; /* Links inherit parent color */
+}
+
+/* ======================
+   BUTTON STYLES
+   ====================== */
+
+/* Base button styling for all buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black; /* Black button background */
+  color: var(--white);
+  border: none;
+  border-radius: 25px; /* Fully rounded corners */
+  cursor: pointer;
+  transition: var(--transition); /* Smooth transitions */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Button hover effect - changes to pink */
+.btn:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 5px 15px rgba(219, 112, 147, 0.3); /* Soft glow */
+}
+
+/* ======================
+   SECTION STYLES
+   ====================== */
+
+/* Section title styling with decorative underline */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--dark-pink);
+  position: relative;
+  padding-bottom: 15px; /* Space for the underline */
+}
+
+/* The decorative underline under section titles */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the line */
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-pink);
+}
+
+/* Container for centering content with max-width */
+.container {
+  max-width: 1200px; /* Maximum width on large screens */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 20px; /* Padding on sides */
+}
+
+/* ======================
+   NAVIGATION BAR
+   ====================== */
+
+/* Fixed header at top of page */
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2); /* Soft pink shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure nav stays above other content */
+  padding: 15px 0;
+  transition: var(--transition); /* Smooth transitions */
+}
+
+/* Flex container for nav items */
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Logo left, links right */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px; /* Slight spacing for elegance */
+}
+
+/* Navigation links list */
+.nav-links {
+  display: flex;
+  list-style: none; /* Remove bullet points */
+}
+
+/* Individual nav items */
+.nav-links li {
+  margin-left: 30px; /* Space between items */
+  position: relative; /* For hover effects */
+}
+
+/* Nav link styling */
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 5px 0; /* Makes hover area larger */
+}
+
+/* Nav link hover effect */
+.nav-links a:hover {
+  color: var(--dark-pink);
+}
+
+/* Active nav link styling */
+.nav-links a.active {
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+/* Active link underline */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-pink);
+}
+
+/* Shopping cart icon with badge */
+.cart-icon {
+  position: relative; /* For badge positioning */
+}
+
+/* Cart item counter badge */
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--dark-pink);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Mobile menu toggle (hidden by default) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Hamburger menu lines */
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-pink);
+  margin: 5px;
+  transition: var(--transition); /* For animation */
+}
+
+/* ======================
+   HERO SECTION
+   ====================== */
+
+/* Hero section with background image */
+.join-hero {
+    background: linear-gradient(rgba(107, 85, 85, 0.4), rgba(255, 182, 193, 0.2)), 
+                url('https://musearabia.net/wp-content/uploads/2024/05/Real-Deal-Model1-2.jpg') center/cover;
+    height: 80vh; /* 80% of viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px; /* Account for fixed navbar */
+}
+
+/* Hero heading */
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
+}
+
+/* Hero paragraph */
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Scroll down indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite; /* Continuous bounce animation */
+    cursor: pointer;
+}
+
+/* ======================
+   BENEFITS SECTION
+   ====================== */
+
+/* Benefits section container */
+.benefits-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+/* Grid layout for benefit cards */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Individual benefit card */
+.benefit-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(219, 112, 147, 0.1);
+    transition: var(--transition);
+}
+
+/* Benefit card hover effect */
+.benefit-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(219, 112, 147, 0.2); /* Stronger shadow */
+}
+
+/* Benefit icon container */
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-pink);
+    border-radius: 50%; /* Circular icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: var(--dark-pink);
+    transition: var(--transition);
+}
+
+/* Icon hover effect */
+.benefit-card:hover .benefit-icon {
+    background-color: var(--dark-pink);
+    color: white;
+}
+
+/* Benefit heading */
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-pink);
+}
+
+/* ======================
+   JOIN FORM SECTION
+   ====================== */
+
+/* Form section with gradient background */
+.join-form-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff0f5, #fff9fa);
+}
+
+/* Form container styling */
+.form-container {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(219, 112, 147, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form heading */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-pink);
+    font-size: 2rem;
+}
+
+/* Form input group */
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Form input styling */
+.form-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--secondary-pink);
+    outline: none;
+    background: transparent;
+}
+
+/* Form label styling */
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+/* Label animation when input is focused or has content */
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+    top: -15px;
+    font-size: 0.8rem;
+    color: var(--dark-pink);
+}
+
+/* Animated underline for inputs */
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--dark-pink);
+    transition: var(--transition);
+}
+
+/* Expand underline on focus */
+.form-group input:focus ~ .underline {
+    width: 100%;
+}
+
+/* Password strength meter */
+.password-strength {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Strength meter bar */
+.strength-bar {
+    height: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Dynamic strength indicator */
+.strength-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Checkbox spacing */
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+/* Join button styling */
+.btn-join {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* ======================
+   TESTIMONIALS SECTION
+   ====================== */
+
+/* Testimonials container */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+/* Testimonial slider container */
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual testimonial (hidden by default) */
+.testimonial {
+    display: none;
+    text-align: center;
+}
+
+/* Active testimonial */
+.testimonial.active {
+    display: block;
+}
+
+/* Testimonial content box */
+.testimonial-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(219, 112, 147, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Testimonial author info */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Author image */
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--light-pink);
+}
+
+/* Slider controls */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Slider dots */
+.slider-dots {
+    display: flex;
+    gap: 10px;
+}
+
+/* Individual dot */
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary-pink);
+    cursor: pointer;
+}
+
+/* Active dot */
+.dot.active {
+    background-color: var(--dark-pink);
+}
+
+/* Previous/next buttons */
+.prev-testimonial, .next-testimonial {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--dark-pink);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Button hover effect */
+.prev-testimonial:hover, .next-testimonial:hover {
+    color: var(--primary-pink);
+}
+
+/* ======================
+   CTA SECTION
+   ====================== */
+
+/* Call-to-action section with gradient */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+    text-align: center;
+    color: white;
+}
+
+/* CTA heading */
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* CTA paragraph */
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* CTA button */
+.btn-cta {
+    background-color: white;
+    color: var(--dark-pink);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* CTA button hover */
+.btn-cta:hover {
+    background-color: var(--light-pink);
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+
+/* Footer container */
+.footer {
+    background-color: var(--white);
+    padding: 60px 0 0;
+    box-shadow: 0 -5px 15px rgba(255, 182, 193, 0.1);
+}
+
+/* Footer grid layout */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Footer logo styling */
+.footer-logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-pink);
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Footer link sections */
+.footer-links h3, .footer-social h3 {
+    font-size: 1.3rem;
+    color: var(--dark-pink);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px; /* For underline */
+}
+
+/* Section title underline */
+.footer-links h3::after, .footer-social h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-pink);
+}
+
+/* Social media icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Individual social icon */
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    border-radius: 50%; /* Circular icons */
+    transition: var(--transition);
+}
+
+/* Social icon hover effect */
+.social-icons a:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-5px); /* Slight lift */
+}
+
+/* Footer copyright area */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 182, 193, 0.3);
+    font-size: 0.9rem;
+}
+
+/* ======================
+   CART MODAL
+   ====================== */
+
+/* Shopping cart modal (hidden by default) */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 2000; /* Above other content */
+  overflow-y: auto; /* Scrollable */
+  transform: translateX(100%); /* Offscreen by default */
+  transition: transform 0.3s ease;
+}
+
+/* Active cart modal */
+.cart-modal.active {
+  display: block;
+  transform: translateX(0); /* Slide in */
+}
+
+/* Cart content area */
+.cart-content {
+  padding: 20px;
+  position: relative;
+  height: 100%;
+}
+
+/* Close button */
+.close-cart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
+/* Cart items list */
+.cart-items {
+  margin-bottom: 20px;
+  max-height: 60vh; /* Limit height with scroll */
+  overflow-y: auto;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3); /* Item divider */
+}
+
+/* Cart total section */
+.cart-total {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3); /* Divider */
+}
+
+/* Checkout button */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Checkout button hover */
+.checkout-btn:hover {
+  background-color: var(--dark-pink);
+}
+
+/* ======================
+   RESPONSIVE STYLES
+   ====================== */
+
+/* Tablet breakpoint */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3rem; /* Smaller heading */
+    }
+    
+    .section-title {
+        font-size: 2rem; /* Smaller section title */
+    }
+}
+
+/* Small tablet/mobile breakpoint */
+@media (max-width: 768px) {
+    /* Mobile menu styles */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: var(--transition);
+    }
+    
+    /* Show mobile menu */
+    .nav-links.active {
+        left: 0;
+    }
+    
+    /* Mobile menu items */
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    /* Show hamburger menu */
+    .hamburger {
+        display: block;
+    }
+    
+    /* Adjust hero text size */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    /* Adjust form padding */
+    .form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 576px) {
+    /* Further reduce hero text size */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    /* Single column benefits */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust testimonial padding */
+    .testimonial-content {
+        padding: 20px;
+    }
+}

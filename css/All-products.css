@@ -1,0 +1,1242 @@
+/* =============================================
+   GLOBAL STYLES & VARIABLES
+   ============================================= */
+
+/* Define color variables for consistent theming */
+:root {
+  --primary-pink: #ffb6c1;       /* Main brand pink color */
+  --secondary-pink: #f7bfc8;     /* Secondary pink for accents */
+  --light-pink: #edbdcd;         /* Light pink for backgrounds */
+  --dark-pink: #dc678e;          /* Dark pink for text/buttons */
+  --text-color: #555;            /* Default text color */
+  --white: #f9ecee;              /* Off-white background color */
+  --transition: all 0.3s ease;   /* Standard transition effect */
+}
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: #f8f0f3;     /* Light pink background */
+  overflow-x: hidden;            /* Prevent horizontal scroll */
+}
+
+/* Link styling - remove underline and inherit color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =============================================
+   BUTTON STYLES
+   ============================================= */
+
+/* Base button style */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(247, 148, 189);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(219, 112, 147, 0.3);
+}
+
+/* =============================================
+   SECTION STYLES
+   ============================================= */
+
+/* Section title styling */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: rgb(15, 12, 12);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Section title underline decoration */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-pink);
+}
+
+/* Container for centered content with max width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =============================================
+   NAVIGATION BAR
+   ============================================= */
+
+/* Fixed navigation bar at top of page */
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 15px 0;
+  transition: var(--transition);
+}
+
+/* Navigation container layout */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+}
+
+/* Navigation links list */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Individual navigation items */
+.nav-links li {
+  margin-left: 30px;
+  position: relative;
+}
+
+/* Navigation link styling */
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 5px 0;
+}
+
+/* Navigation link hover effect */
+.nav-links a:hover {
+  color: var(--dark-pink);
+}
+
+/* Active navigation link styling */
+.nav-links a.active {
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+/* Active link underline indicator */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-pink);
+}
+
+/* Shopping cart icon styling */
+.cart-icon {
+  position: relative;
+}
+
+/* Cart item counter bubble */
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--dark-pink);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Mobile menu hamburger icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Hamburger icon lines */
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-pink);
+  margin: 5px;
+  transition: var(--transition);
+}
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+
+/* Full-height hero section with gradient overlay */
+.products-hero {
+  background: linear-gradient(rgba(255, 182, 193, 0.2), rgba(255, 182, 193, 0.1)), 
+              url('https://cdn.pixabay.com/photo/2016/05/11/03/55/background-1385136_1280.png') center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--dark-pink);
+  margin-bottom: 60px;
+}
+
+/* Hero content container */
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Hero heading */
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Hero subheading */
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* =============================================
+   PRODUCT SHOWCASE SECTIONS
+   ============================================= */
+
+/* Video background showcase sections */
+.video-product-showcase {
+  position: relative;
+  height: 500px;
+  margin: 80px 0;
+  overflow: hidden;
+}
+
+/* Video container for background */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Video styling */
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Featured product card that overlays video */
+.featured-product {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(219, 112, 147, 0.2);
+}
+
+/* Position showcase 2 product card */
+.showcase-2 .featured-product {
+  left: 48%;
+}
+
+/* Position showcase 3 product card */
+.showcase-3 .featured-product {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Product image container */
+.product-image {
+  flex: 1;
+  position: relative;
+}
+
+/* Product image styling */
+.product-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Product details container */
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Product title */
+.product-details h3 {
+  font-size: 1.8rem;
+  color: var(--dark-pink);
+  margin-bottom: 15px;
+}
+
+/* Product rating display */
+.rating {
+  color: var(--dark-pink);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Review count text */
+.rating span {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Product description */
+.description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Product price */
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dark-pink);
+  margin-bottom: 20px;
+}
+
+/* Original price (for sale items) */
+.original-price {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+/* View details link */
+.view-details {
+  color: var(--dark-pink);
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+/* =============================================
+   PRODUCT GRID & CARDS
+   ============================================= */
+
+/* All products section */
+.all-products {
+  padding: 40px 0;
+  background-color: #fff;
+}
+/* Container for proper centering */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+  gap: 20px;
+}
+
+/* Individual product card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Make all cards same height */
+}
+
+/* Product card hover effect */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Product image container */
+.product-img {
+  position: relative;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+}
+
+/* Product image styling */
+.product-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Product image hover effect */
+.product-card:hover .product-img img {
+  transform: scale(1.03);
+}
+
+/* Color shade options */
+.shade-options {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  gap: 6px;
+}
+
+/* Individual color shade */
+.shade {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Shade hover effect */
+.shade:hover {
+  transform: scale(1.2);
+}
+
+/* Product badge styling (bestseller, new, etc) */
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Bestseller badge */
+.bestseller {
+  background-color: #ff6b6b;
+}
+
+/* New product badge */
+.new {
+  background-color: #51cf66;
+}
+
+/* Sale badge */
+.sale {
+  background-color: #fcc419;
+}
+
+/* Free shipping badge */
+.free-shipping {
+  top: 45px;
+  background-color: #339af0;
+}
+
+/* Product info container */
+.product-info {
+  padding: 18px;
+}
+
+/* Product title */
+.product-info h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Rating stars */
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #ffd43b;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Review count */
+.review-count {
+  font-size: 12px;
+  color: #868e96;
+  margin-left: 5px;
+}
+
+/* Product price */
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin: 10px 0 15px;
+}
+
+/* Original price for sale items */
+.original-price {
+  font-size: 14px;
+  color: #868e96;
+  text-decoration: line-through;
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+/* Add to cart button */
+.add-to-cart {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Add to cart hover effect */
+.add-to-cart:hover {
+  background-color: #333;
+}
+
+/* =============================================
+   BEAUTY TIPS CAROUSEL
+   ============================================= */
+
+/* Beauty tips section */
+.beauty-tips {
+    padding: 50px 0;
+    background-color: #f7e0ce;
+    position: relative;
+}
+
+/* Horizontal scrolling carousel */
+.tips-carousel {
+    display: flex;
+    gap: 210px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Individual tip card */
+.tip-card {
+    min-width: 280px;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    border: 1px solid #ffe5e8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tip card hover effect */
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #ffb6c1;
+}
+
+/* Colored top border */
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffb6c1, #ff8fab, #ff6b8b);
+}
+
+/* Tip image container */
+.tip-image-wrapper {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Tip image */
+.tip-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Tip image hover effect */
+.tip-card:hover .tip-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Tip content container */
+.tip-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tip title */
+.tip-content h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Tip description */
+.tip-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Read more button */
+.btn-tip {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #241c1c;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Read more button hover */
+.btn-tip:hover {
+    background-color: white;
+    color: #ff6b8b;
+    border-color: #ff6b8b;
+}
+
+/* =============================================
+   INSTAGRAM FEED
+   ============================================= */
+
+/* Instagram section */
+.instagram-feed {
+  padding: 60px 0;
+  background: #fad1d7;
+}
+
+/* Instagram posts grid */
+.instagram-posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Individual Instagram post */
+.post {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+/* Instagram video */
+.post video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hide default video controls */
+.post video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Instagram overlay effect */
+.post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(219, 112, 147, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Instagram icon in overlay */
+.post-overlay i {
+  color: white;
+  font-size: 2rem;
+}
+
+/* Show overlay on hover */
+.post:hover .post-overlay {
+  opacity: 1;
+}
+
+/* Scale video on hover */
+.post:hover video {
+  transform: scale(1.05);
+}
+
+/* Instagram follow button */
+.instagram-btn {
+  margin-top: 30px;
+  background:  linear-gradient(to right, #ffb6c1, #f7bfc8);
+  color: rgb(245, 239, 239);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Instagram button hover */
+.instagram-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =============================================
+   NEWSLETTER SECTION
+   ============================================= */
+
+/* Newsletter signup section */
+.newsletter {
+  padding: 60px 0;
+  background-color: var(--white);
+  text-align: center;
+}
+
+/* Newsletter container */
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Newsletter heading */
+.newsletter h2 {
+  font-size: 2rem;
+  color: var(--dark-pink);
+  margin-bottom: 15px;
+}
+
+/* Newsletter description */
+.newsletter p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Newsletter form */
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Email input field */
+.newsletter-form input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid var(--primary-pink);
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Subscribe button */
+.newsletter-form button {
+  padding: 15px 30px;
+  border-radius: 0 25px 25px 0;
+  border: none;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Subscribe button hover */
+.newsletter-form button:hover {
+  background-color: var(--dark-pink);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+/* Footer section */
+.footer {
+  background-color: var(--white);
+  padding: 60px 0 0;
+  box-shadow: 0 -5px 15px rgba(255, 182, 193, 0.1);
+}
+
+/* Footer container grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer logo */
+.footer-logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--dark-pink);
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Footer description */
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Footer section headings */
+.footer-links h3, .footer-social h3 {
+  font-size: 1.3rem;
+  color: var(--dark-pink);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Footer heading underline */
+.footer-links h3::after, .footer-social h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-pink);
+}
+
+/* Footer links list */
+.footer-links ul {
+  list-style: none;
+}
+
+/* Individual footer links */
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+/* Footer link hover effect */
+.footer-links a:hover {
+  color: var(--dark-pink);
+  padding-left: 5px;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Individual social icon */
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+/* Social icon hover */
+.social-icons a:hover {
+  background-color: var(--dark-pink);
+  transform: translateY(-5px);
+}
+
+/* Footer copyright section */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   SHOPPING CART MODAL
+   ============================================= */
+
+/* Shopping cart sidebar */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* Active cart modal */
+.cart-modal.active {
+  display: block;
+  transform: translateX(0);
+}
+
+/* Cart content container */
+.cart-content {
+  padding: 20px;
+  position: relative;
+  height: 100%;
+}
+
+/* Close cart button */
+.close-cart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-pink);
+}
+
+/* Cart heading */
+.cart-content h2 {
+  color: var(--dark-pink);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Cart items container */
+.cart-items {
+  margin-bottom: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Cart item image */
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+/* Cart item details */
+.cart-item-details {
+  flex: 1;
+}
+
+/* Cart item title */
+.cart-item-title {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--dark-pink);
+}
+
+/* Cart item price */
+.cart-item-price {
+  font-size: 0.9rem;
+  color: var(--dark-pink);
+  margin-bottom: 5px;
+}
+
+/* Remove item link */
+.cart-item-remove {
+  color: var(--dark-pink);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Cart total section */
+.cart-total {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Total price display */
+.total-price {
+  color: var(--dark-pink);
+}
+
+/* Checkout button */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-pink);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Checkout button hover */
+.checkout-btn:hover {
+  background-color: var(--dark-pink);
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from { 
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Animation delay classes */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* =============================================
+   RESPONSIVE STYLES
+   ============================================= */
+
+/* Tablet styles (992px and below) */
+@media (max-width: 992px) {
+  .featured-product {
+      flex-direction: column;
+      max-width: 400px;
+  }
+  
+  .instagram-posts {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small tablet styles (768px and below) */
+@media (max-width: 768px) {
+  /* Convert nav to mobile menu */
+  .nav-links {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background-color: var(--white);
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 30px;
+      transition: var(--transition);
+  }
+  
+  /* Show mobile menu */
+  .nav-links.active {
+      left: 0;
+  }
+  
+  /* Mobile menu items */
+  .nav-links li {
+      margin: 15px 0;
+  }
+  
+  /* Show hamburger menu */
+  .hamburger {
+      display: block;
+  }
+  
+  /* Hamburger to X animation */
+  .hamburger.active .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .hamburger.active .line:nth-child(2) {
+      opacity: 0;
+  }
+  
+  .hamburger.active .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Adjust product grid */
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-img {
+    height: 200px;
+  }
+}
+
+/* Mobile styles (576px and below) */
+@media (max-width: 576px) {
+  /* Adjust hero section */
+  .products-hero {
+      height: 50vh;
+  }
+  
+  /* Stack newsletter form */
+  .newsletter-form {
+      flex-direction: column;
+  }
+  
+  .newsletter-form input {
+      border-radius: 25px;
+      margin-bottom: 10px;
+  }
+  
+  .newsletter-form button {
+      border-radius: 25px;
+  }
+  
+  /* Full-width cart on mobile */
+  .cart-modal {
+      width: 100%;
+  }
+  
+  /* Single column product grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Adjust product card padding */
+  .product-info {
+    padding: 12px;
+  }
+  
+  /* Smaller product titles */
+  .product-info h3 {
+    font-size: 14px;
+  }
+  
+  /* Smaller prices */
+  .price {
+    font-size: 16px;
+  }
+  
+  /* Single column Instagram posts */
+  .instagram-posts {
+    grid-template-columns: 1fr;
+  }
+}
